@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  issuer-api:
+    build:
+      context: ../  # Set the build context to the project root
+      dockerfile: waltid-issuer-api/Dockerfile  # Specify Dockerfile location
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../docker-compose/issuer-api/credential-issuer-metadata.conf:/config/credential-issuer-metadata.conf
